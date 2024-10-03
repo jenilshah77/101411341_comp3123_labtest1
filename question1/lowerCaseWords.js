@@ -1,9 +1,9 @@
-function lowerCaseWords(array) {
+function lowerCaseWords(mixedArray) {
     return new Promise((resolve, reject) => {
-        if (!Array.isArray(array)) {
-            reject(" The Provided Input is not an array");
+        if (!Array.isArray(mixedArray)) {
+            reject("The Provided Input is not an array");
         } else {
-            const Elements = array
+            const Elements = mixedArray
                 .filter(item => typeof item === 'string')
                 .map(word => word.toLowerCase());
             resolve(Elements);
@@ -11,7 +11,7 @@ function lowerCaseWords(array) {
     });
 }
 
-const mixedArray = ['Pizza', 10, true, 25 , false ,'Wings'];
+const mixedArray = ['Pizza', 10, true, 25, false, 'Wings'];
 
 lowerCaseWords(mixedArray)
     .then(result => console.log(result))  
